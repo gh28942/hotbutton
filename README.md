@@ -5,5 +5,5 @@ You can download the full program here: http://www.mediafire.com/file/xkkru61ln8
 
 Youtube demo video: https://youtu.be/8P_sX8u0nH0
 
-![HotButton game](screenshot/hotbutton-screenshot.jpg?raw=true "HotButton game")
+![HotButton game](screenshot/hotbutton_screenshot.jpg?raw=true "HotButton game")
 Screenshot of the "endless game" mode of HotButton.
