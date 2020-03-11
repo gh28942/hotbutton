@@ -409,7 +409,7 @@ public class Main extends Application {
 
 					}
 					gameIsOn = false;
-					if (!type.equals("horror")) {
+					if (!type.equals("horror")) { //hunt
 						DialogBoxes.showMessageBox("Game Over", "Game mode: Hunt", "Score: " + globalscore + "\nMisses: " + globalmisses);
 						//hunt easy cleared
 						if(checkUnlockNumber(0)==0 && globalscore>=430)
@@ -421,7 +421,7 @@ public class Main extends Application {
 						else if(checkUnlockNumber(0)==2 && globalscore>=509)
 							changeUnlockNumber(0,'3', subtype);
 					}
-					else { //hunt
+					else { //horror
 						DialogBoxes.showMessageBox("Game Over", "Game mode: Horror", "Score: " + globalscore + "\nMisses: " + globalmisses);
 						//horror easy cleared
 						if(checkUnlockNumber(3)==0 && globalscore>=440)
