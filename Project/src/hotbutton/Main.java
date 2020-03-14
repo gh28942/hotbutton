@@ -136,6 +136,9 @@ public class Main extends Application {
 	Thread musicThread = new Thread();
 	Thread playerThread = new Thread();
 	
+	//For the Windows installer - store data in the AppData Folder. Uncomment for use in the installer.
+	String windowsFilePath = "";//System.getenv("APPDATA") + "//GerH/HotButton/";
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -409,28 +412,28 @@ public class Main extends Application {
 
 					}
 					gameIsOn = false;
-					if (!type.equals("horror")) { //hunt
+					if (!type.equals("horror")) {
 						DialogBoxes.showMessageBox("Game Over", "Game mode: Hunt", "Score: " + globalscore + "\nMisses: " + globalmisses);
 						//hunt easy cleared
-						if(checkUnlockNumber(0)==0 && globalscore>=430)
+						if(checkUnlockNumber(0)==0 && globalscore>=420)
 							changeUnlockNumber(0,'1', subtype);
 						//hunt medium cleared
-						else if(checkUnlockNumber(0)==1 && globalscore>=519)
+						else if(checkUnlockNumber(0)==1 && globalscore>=509)
 							changeUnlockNumber(0,'2', subtype);
 						//hunt hard cleared
-						else if(checkUnlockNumber(0)==2 && globalscore>=509)
+						else if(checkUnlockNumber(0)==2 && globalscore>=499)
 							changeUnlockNumber(0,'3', subtype);
 					}
 					else { //horror
 						DialogBoxes.showMessageBox("Game Over", "Game mode: Horror", "Score: " + globalscore + "\nMisses: " + globalmisses);
 						//horror easy cleared
-						if(checkUnlockNumber(3)==0 && globalscore>=440)
+						if(checkUnlockNumber(3)==0 && globalscore>=410)
 							changeUnlockNumber(3,'1', subtype);
 						//horror medium cleared
-						else if(checkUnlockNumber(3)==1 && globalscore>=529)
+						else if(checkUnlockNumber(3)==1 && globalscore>=499)
 							changeUnlockNumber(3,'2', subtype);
 						//horror hard cleared
-						else if(checkUnlockNumber(3)==2 && globalscore>=519)
+						else if(checkUnlockNumber(3)==2 && globalscore>=489)
 							changeUnlockNumber(3,'3', subtype);
 					}
 					nameField.setEditable(true);
@@ -513,13 +516,13 @@ public class Main extends Application {
 					manageHighscore(globalscore, 60, globalmisses, "Buttons shot: " + buttonsShot[0], subtype);
 					
 					//time easy cleared
-					if(checkUnlockNumber(1)==0 && globalscore>=706)
+					if(checkUnlockNumber(1)==0 && globalscore>=686)
 						changeUnlockNumber(1,'1', subtype);
 					//time medium cleared
-					else if(checkUnlockNumber(1)==1 && globalscore>=643)
+					else if(checkUnlockNumber(1)==1 && globalscore>=623)
 						changeUnlockNumber(1,'2', subtype);
 					//time hard cleared
-					else if(checkUnlockNumber(1)==2 && globalscore>=608)
+					else if(checkUnlockNumber(1)==2 && globalscore>=588)
 						changeUnlockNumber(1,'3', subtype);
 				
 					//remove every remaining buttons
@@ -607,13 +610,13 @@ public class Main extends Application {
 					manageHighscore(globalscore, timeElapsed, globalmisses, "Buttons shot: " + buttonsShot[0], subtype);
 					
 					//click easy cleared
-					if(checkUnlockNumber(2)==0 && globalscore>=440)
+					if(checkUnlockNumber(2)==0 && globalscore>=420)
 						changeUnlockNumber(2,'1', subtype);
 					//click medium cleared
-					else if(checkUnlockNumber(2)==1 && globalscore>=434)
+					else if(checkUnlockNumber(2)==1 && globalscore>=414)
 						changeUnlockNumber(2,'2', subtype);
 					//click hard cleared
-					else if(checkUnlockNumber(2)==2 && globalscore>=407)
+					else if(checkUnlockNumber(2)==2 && globalscore>=387)
 						changeUnlockNumber(2,'3', subtype);
 					
 					//remove every remaining buttons
@@ -1121,7 +1124,7 @@ public class Main extends Application {
 		Scanner in;
 		try {
 			// read and decrypt persistent data file
-			in = new Scanner(new FileReader("data/0"));
+			in = new Scanner(new FileReader(windowsFilePath + "data/0"));
 			StringBuilder sb = new StringBuilder();
 			while (in.hasNext()) 
 				sb.append(in.next());
@@ -1142,7 +1145,7 @@ public class Main extends Application {
 		try {
 			String highscoreStringEncr = AES.encrypt(dataString, secretKey);
 			PrintWriter writer;
-			writer = new PrintWriter("data/0", "UTF-8");
+			writer = new PrintWriter(windowsFilePath + "data/0", "UTF-8");
 			writer.println(highscoreStringEncr);
 			writer.close();
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
@@ -1159,7 +1162,7 @@ public class Main extends Application {
 		Scanner in;
 		try {
 			//read and decrypt highscore file
-			in = new Scanner(new FileReader("data/" + gameMode));
+			in = new Scanner(new FileReader(windowsFilePath + "data/" + gameMode));
 			StringBuilder sb = new StringBuilder();
 			while (in.hasNext()) {
 				sb.append(in.next());
@@ -1215,7 +1218,7 @@ public class Main extends Application {
 				highscoreString+=(HSlines[i]+"|");
 			String highscoreStringEncr = AES.encrypt(highscoreString, secretKey);
 			PrintWriter writer;
-			writer = new PrintWriter("data/"+gameMode, "UTF-8");
+			writer = new PrintWriter(windowsFilePath + "data/"+gameMode, "UTF-8");
 			writer.println(highscoreStringEncr);
 			writer.close();
 
