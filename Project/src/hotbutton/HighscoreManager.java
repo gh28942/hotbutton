@@ -28,6 +28,9 @@ public class HighscoreManager {
 	Label HSlabel;
 	
 	final String secretKey = "|,£0²hQsµøÈ¹»8Ú¼qñ0TÚÁ®Ø`jî«´è7^Ý}ç";
+
+	//For the Windows installer - store data in the AppData Folder. Uncomment for use in the installer.
+	String windowsFilePath = "";//System.getenv("APPDATA") + "//GerH/HotButton/";
 	
 	public void openScoreview(){
 
@@ -230,7 +233,7 @@ public class HighscoreManager {
 		Scanner in;
 
 		try {
-			in = new Scanner(new FileReader("data/"+gameMode));
+			in = new Scanner(new FileReader(windowsFilePath + "data/"+gameMode));
 			StringBuilder sb = new StringBuilder();
 			while(in.hasNext()) {
 				sb.append(in.next());
@@ -261,7 +264,7 @@ public class HighscoreManager {
 		Scanner in;
 		try {
 			// read and decrypt persistent data file
-			in = new Scanner(new FileReader("data/0"));
+			in = new Scanner(new FileReader(windowsFilePath + "data/0"));
 			StringBuilder sb = new StringBuilder();
 			while (in.hasNext()) 
 				sb.append(in.next());
