@@ -22,7 +22,7 @@ Youtube demo video: https://youtu.be/8P_sX8u0nH0
 <br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/gh28942/hotbutton/master/screenshot/hotbutton_screenshot.jpg" width="80%">
-<br>Screenshot of the "endless game" mode of HotButton</br>
+<br>The "endless game" mode of HotButton</br>
 <br>
 </p>
 <hr>
