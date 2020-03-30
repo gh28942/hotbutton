@@ -6,7 +6,7 @@ A JavaFX shooting game. The game features different types of game modes (and dif
  * Horror - like hunt, but with a shocking surprise
 
 Every game mode does have its own high score, which is encrypted with AES encryption.
-<br><br><br>
+<br><br>
 
 ## Download
 
