@@ -6,7 +6,7 @@ A JavaFX shooting game. The game features different types of game modes (and dif
  * Horror - like hunt, but with a shocking surprise
 
 Every game mode does have its own high score, which is encrypted with AES encryption.
-
+<br><br><br>
 You can download the full program here: http://www.mediafire.com/file/xkkru61ln83wwwy/HotButton_download-ready_files.zip/file
 
 And here's a nice *Windows installer* for the game: https://www.mediafire.com/file/4j2hyq5vjgjbumt/hotbutton-setup.exe/file
