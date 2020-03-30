@@ -12,6 +12,12 @@ You can download the full program here: http://www.mediafire.com/file/xkkru61ln8
 And here's a nice *Windows installer* for the game: https://www.mediafire.com/file/4j2hyq5vjgjbumt/hotbutton-setup.exe/file
 
 Youtube demo video: https://youtu.be/8P_sX8u0nH0
-
-![HotButton game](screenshot/hotbutton_screenshot.jpg?raw=true "HotButton game")
-Screenshot of the "endless game" mode of HotButton.
+<br><br>
+<hr>
+<br>
+<p align="center">
+<img src="https://raw.githubusercontent.com/gh28942/hotbutton/master/screenshot/hotbutton_screenshot.jpg" width="80%">
+<br>Screenshot of the "endless game" mode of HotButton</br>
+<br>
+</p>
+<hr>
